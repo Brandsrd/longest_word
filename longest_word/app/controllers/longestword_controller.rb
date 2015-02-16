@@ -24,7 +24,7 @@ class LongestwordController < ApplicationController
   end
 
   def included?(guess, grid)
-    the_grid = grid.clone
+    the_grid = grid.clone.split(/ /)
     guess.chars.each do |letter|
       the_grid.delete_at(the_grid.index(letter)) if the_grid.include?(letter)
     end
